@@ -1,73 +1,52 @@
-/* Configurações Gerais */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
-}
-
-header {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-section {
-    background: white;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+/* Estilo para deixar as imagens responsivas e bonitas */
+.img-responsiva {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
 }
 
-h2 {
-    color: #1e3c72;
+/* Estilos do Jogo */
+#jogo-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #1e3c72;
 }
 
-ul {
-    padding-left: 1.2rem;
+#pergunta {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-/* Estilo dos Botões do Quiz */
-button {
+.btn-opcao {
     display: block;
     width: 100%;
-    background-color: #1e3c72;
-    color: white;
-    border: none;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    border: 2px solid #1e3c72;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s;
+    text-align: left;
+    transition: all 0.2s;
 }
 
-button:hover {
-    background-color: #2a5298;
-}
-
-#resultado {
-    font-weight: bold;
-    margin-top: 15px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
+.btn-opcao:hover {
+    background-color: #1e3c72;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+#btn-proximo {
+    background-color: #2ecc71;
+    color: white;
+    margin-top: 15px;
+}
+
+#btn-proximo:hover {
+    background-color: #27ae60;
 }
