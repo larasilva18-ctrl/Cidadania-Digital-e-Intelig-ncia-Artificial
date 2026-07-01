@@ -15,6 +15,7 @@
     <main class="container">
         <section id="sobre">
             <h2>O que são Deepfakes e Desinformação?</h2>
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=60" alt="Conceito de Inteligência Artificial" class="img-responsiva">
             <p>Com o avanço da Inteligência Artificial, ficou muito mais fácil criar vídeos, áudios e imagens falsas que parecem perfeitamente reais. Isso é o que chamamos de <strong>Deepfake</strong>. Quando usados de má-fé, esses conteúdos geram desinformação em massa.</p>
         </section>
 
@@ -28,13 +29,14 @@
         </section>
 
         <section id="quiz-section">
-            <h2>Teste seus Conhecimentos</h2>
-            <p>Você sabe diferenciar um fato de uma desinformação? Responda rápido:</p>
-            <div id="quiz">
-                <p id="pergunta">Se você receber um vídeo chocante de uma figura pública no WhatsApp, qual deve ser sua primeira reação?</p>
-                <button onclick="verificarResposta(true)">Compartilhar imediatamente para alertar os amigos.</button>
-                <button onclick="verificarResposta(false)">Duvidar e pesquisar em canais oficiais antes de repassar.</button>
+            <h2>🎮 Jogo da Verdade: Fake ou Fato?</h2>
+            <p>Analise a situação e teste suas habilidades de cidadão digital!</p>
+            
+            <div id="jogo-container">
+                <p id="pergunta">Carregando pergunta...</p>
+                <div id="alternativas"></div>
                 <p id="resultado"></p>
+                <button id="btn-proximo" style="display: none;" onclick="proximaPergunta()">Próxima Pergunta</button>
             </div>
         </section>
     </main>
