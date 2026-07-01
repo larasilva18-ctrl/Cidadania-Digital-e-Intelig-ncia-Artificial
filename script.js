@@ -6,7 +6,7 @@ const perguntas = [
             "Acredito e envio o dinheiro na hora para ajudar.",
             "Desconfio. Vozes podem ser clonadas por IA. Procuro o perfil oficial do famoso para checar."
         ],
-        correta: 1 // Índice da resposta certa
+        correta: 1
     },
     {
         pergunta: "2. Ao olhar uma foto de uma notícia, você nota que a pessoa tem 6 dedos em uma das mãos e o fundo está borrado de forma estranha. O que isso indica?",
@@ -29,14 +29,12 @@ const perguntas = [
 let perguntaAtual = 0;
 let pontuacao = 0;
 
-// Função para iniciar ou atualizar o jogo na tela
 function carregarPergunta() {
     const elementoPergunta = document.getElementById("pergunta");
     const elementoAlternativas = document.getElementById("alternativas");
     const elementoResultado = document.getElementById("resultado");
     const btnProximo = document.getElementById("btn-proximo");
 
-    // Limpa mensagens anteriores e esconde o botão de próximo
     elementoResultado.innerHTML = "";
     btnProximo.style.display = "none";
     elementoAlternativas.innerHTML = "";
@@ -45,28 +43,24 @@ function carregarPergunta() {
         let dadosPergunta = perguntas[perguntaAtual];
         elementoPergunta.innerText = dadosPergunta.pergunta;
 
-        // Cria os botões para cada alternativa
         dadosPergunta.opcoes.forEach((opcao, indice) => {
             const botao = document.createElement("button");
-            botao.innerText = opacity = opcao;
+            botao.innerText = opcao; // CORRIGIDO: Removido o erro do 'opacity'
             botao.classList.add("btn-opcao");
             botao.onclick = () => verificarResposta(indice);
             elementoAlternativas.appendChild(botao);
         });
     } else {
-        // Fim do jogo
         elementoPergunta.innerText = "🎉 Jogo Terminado!";
         elementoAlternativas.innerHTML = `<p>Você acertou ${pontuacao} de ${perguntas.length} perguntas.</p>`;
     }
 }
 
-// Função que valida se o jogador acertou
 function verificarResposta(indiceSelecionado) {
     const elementoResultado = document.getElementById("resultado");
     const btnProximo = document.getElementById("btn-proximo");
     const dadosPergunta = perguntas[perguntaAtual];
 
-    // Desativa os botões para o usuário não clicar duas vezes
     const botoes = document.querySelectorAll(".btn-opcao");
     botoes.forEach(btn => btn.disabled = true);
 
@@ -79,15 +73,12 @@ function verificarResposta(indiceSelecionado) {
         elementoResultado.style.color = "#e74c3c";
     }
 
-    // Mostra o botão para avançar
     btnProximo.style.display = "block";
 }
 
-// Avança para o próximo nível
 function proximaPergunta() {
     perguntaAtual++;
     carregarPergunta();
 }
 
-// Inicializa o jogo assim que a página abre
 window.onload = carregarPergunta;
